@@ -37,6 +37,7 @@ func Delete(stus *[]Stu, name string) bool {
 
 func Update(stus *[]Stu, name string, new Stu) bool {
 	index := -1
+	oid := 0
 	for i, e := range *stus {
 		if e.name == name {
 			e = new
@@ -44,6 +45,8 @@ func Update(stus *[]Stu, name string, new Stu) bool {
 		}
 	}
 	if index != -1 {
+		oid = (*stus)[index].id
+		new.id = oid
 		(*stus)[index] = new
 	} else {
 		return false

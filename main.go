@@ -49,4 +49,14 @@ func main() {
 		gender: "Female",
 	})
 	fmt.Println(stus)
+
+	//Add
+	fmt.Println("Add again")
+	Create(&stus, Stu{
+		name:   "Bob",
+		age:    16,
+		gender: "Male",
+	})
+
+	fmt.Println(stus)
 }
